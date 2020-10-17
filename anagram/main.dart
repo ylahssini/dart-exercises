@@ -15,28 +15,15 @@ bool anagram(String str_a, String str_b) {
   return clean_str_a.length == similar_counter;
 }
 
-String type_first_string() {
-  print('Type the first string:');
-  String str_a = stdin.readLineSync();
+String type_string(String order) {
+  print('Type the $order string:');
+  String str = stdin.readLineSync();
 
-  if (str_a == '') {
-    print('You must type the first string!');
-    return type_first_string();
+  if (str.trim() == '') {
+    print('You must type the $order string!');
+    return type_string(order);
   } else {
-    return str_a;
-  }
-}
-
-
-String type_second_string() {
-  print('Type the second string:');
-  String str_b = stdin.readLineSync();
-
-  if (str_b == '') {
-    print('You must type the second string!');
-    return type_second_string();
-  } else {
-    return str_b;
+    return str;
   }
 }
 
@@ -44,11 +31,11 @@ void main() {
   print('-----------------------------   A N A G R A M   -----------------------------');
   print('Check to see if two provided strings are anagrams of eachother.');
 
-  String str_a = type_first_string();
-  String str_b = type_second_string();
+  String str_a = type_string('first');
+  String str_b = type_string('second');
 
   if (anagram(str_a, str_b)) {
-    print('The two words are anagrams to eachother');
+    print('The two words ($str_a, $str_b) are anagrams to eachother');
   } else {
     print('No, those two words are not anagrams of eachother');
   }
