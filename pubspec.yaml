@@ -1,7 +1,7 @@
 name: dart_excercises
-version: 0.1.0
+version: 0.2.0
 description: >-
-  Dart exercises to familiarize it
+  Dart Exercises
 author: Youssef Lahssini
 environment:
   sdk: '>=2.7.0 <3.0.0'
