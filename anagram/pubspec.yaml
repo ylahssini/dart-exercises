@@ -1,0 +1,11 @@
+name: dart_excercises
+version: 0.1.0
+description: >-
+  Dart exercises to familiarize it
+author: Youssef Lahssini
+environment:
+  sdk: '>=2.7.0 <3.0.0'
+dependencies:
+  ansicolor: ^1.0.5
+dev_dependencies:
+  test: '>=1.15.0 <2.0.0'
