@@ -3,10 +3,12 @@ import '../utils/colors.dart';
 
 class Pyramid {
   int _size;
-  String _character = '#';
+  String _character;
+  String _space;
 
-  Pyramid(this._size, String character) {
+  Pyramid(this._size, String character, String space) {
     this._character = character == '' ? '#' : character[0];
+    this._space = space == '' ? ' ' : space[0];
   }
 
   void display() {
@@ -15,7 +17,7 @@ class Pyramid {
 
     int index = 1;
     for (var i = 0; i < _size; i++) {
-      List<String> row = List.filled(cols, ' ');
+      List<String> row = List.filled(cols, _space);
       List<String> chart_row = List.filled(index, _character);
 
       int center_of_row = (cols / 2).round().toInt();
@@ -36,13 +38,16 @@ void main() {
   print(title('-------------------------   P Y R A M I D   -------------------------'));
   print(sub_title('Draw pyramid\n'));
 
-  print('Type the based one character that show in pyramid (if not, it will take #):');
+  print('Type one character that show inside of pyramid (if not, it will take #):');
   var character = stdin.readLineSync();
+
+  print('Type one character that show outside of pyramid (if not, it will take space ' '):');
+  var space = stdin.readLineSync();
 
   print('Type the number of rows in pyramid:');
   var rows = stdin.readLineSync();
 
-  var p = Pyramid(int.parse(rows), character);
+  var p = Pyramid(int.parse(rows), character, space);
   p.display();
 
   print(title('-------------------------   P Y R A M I D   -------------------------'));
